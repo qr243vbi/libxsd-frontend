@@ -41,7 +41,8 @@ target_include_directories(xsd-frontend
 # libcutl dependency
 # ------------------------------------------------------------
 find_package(libcutl REQUIRED)
-target_link_libraries(xsd-frontend PUBLIC libcutl::cutl )
+find_package(XercesC REQUIRED)
+target_link_libraries(xsd-frontend PUBLIC libcutl::cutl XercesC::XercesC)
 
 # ------------------------------------------------------------
 # Install library
